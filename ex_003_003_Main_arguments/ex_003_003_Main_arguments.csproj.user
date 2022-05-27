@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : ex_003_003_Main_arguments.csproj.user
+   Author        : Marc Chevaldonné
+   Creation date : 2014-03-30
+
+======================================================================== -->
+
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>"Aramis" "Athos" "D%27Artagnan" "Porthos"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartArguments>"Aramis" "Athos" "D%27Artagnan" "Porthos"</StartArguments>
+  </PropertyGroup>
+</Project>

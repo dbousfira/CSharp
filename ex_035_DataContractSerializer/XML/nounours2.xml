@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Nounours xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ex_035_DataContractSerializer">
+  <Amis>
+    <Nounours>
+      <Amis />
+      <NbPoils>3</NbPoils>
+      <Nom>Yoda</Nom>
+      <naissance>1980-05-21T00:00:00</naissance>
+    </Nounours>
+    <Nounours>
+      <Amis />
+      <NbPoils>3456789</NbPoils>
+      <Nom>Ewok</Nom>
+      <naissance>1983-05-25T00:00:00</naissance>
+    </Nounours>
+  </Amis>
+  <NbPoils>1234567</NbPoils>
+  <Nom>Chewbacca</Nom>
+  <naissance>1977-05-27T00:00:00</naissance>
+</Nounours>

@@ -1,0 +1,41 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_019_Binding_in_code_behind.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:my="clr-namespace:ex_074_019_Binding_in_code_behind">
+    <Grid Name="mGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="mTextBlockNom" Text="inconnu"
+                Width="90"
+                Height="30" TextAlignment="Center" />
+        <TextBlock Name="mTextBlockNaissance" Text="1/1/1001"
+                Width="150"
+                Height="30"
+                   Grid.Row="1" TextAlignment="Center" />
+        <TextBlock Name="mTextBlockPoils" Text="0"
+                Width="90"
+                Height="30" 
+                   Grid.Row="2" TextAlignment="Center" />
+        <Button Content="Bind" Click="Button_Click" Grid.Row="3"/>
+    </Grid>
+</Window>
+

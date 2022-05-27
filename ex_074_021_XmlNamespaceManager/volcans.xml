@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : volcans.xml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<vol:volcans xmlns:vol="http://www.volcans.com">
+  <vol:volcan vol:activité="actif" vol:pays="France" vol:type="rouge">
+    <vol:nom>Piton de la Fournaise</vol:nom>
+    <vol:dernière_éruption>2010-12-10</vol:dernière_éruption>
+    <vol:altitude>2632</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>-21.2425</vol:latitude>
+      <vol:longitude>55.708889</vol:longitude>
+    </vol:coordonnées>
+    <vol:roches>Basalte</vol:roches>
+  </vol:volcan>
+  <vol:volcan vol:activité="en éruption" vol:pays="Italie" vol:type="rouge">
+    <vol:nom>Etna</vol:nom>
+    <vol:dernière_éruption>2010-11-14</vol:dernière_éruption>
+    <vol:altitude>3345</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>37.734</vol:latitude>
+      <vol:longitude>15.004</vol:longitude>
+    </vol:coordonnées>
+  </vol:volcan>
+  <vol:volcan vol:activité="actif" vol:pays="Italie" vol:type="gris">
+    <vol:nom>Vesuve</vol:nom>
+    <vol:dernière_éruption>1944-04-04</vol:dernière_éruption>
+    <vol:altitude>1281</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>40.821389</vol:latitude>
+      <vol:longitude>14.425556</vol:longitude>
+    </vol:coordonnées>
+    <vol:roches>Téphrites trachytes phonolites</vol:roches>
+  </vol:volcan>
+  <vol:volcan vol:activité="en éruption" vol:pays="Philippines" vol:type="gris">
+    <vol:nom>Mayon</vol:nom>
+    <vol:dernière_éruption>2011-01-30</vol:dernière_éruption>
+    <vol:altitude>2462</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>13.257</vol:latitude>
+      <vol:longitude>123.685</vol:longitude>
+    </vol:coordonnées>
+  </vol:volcan>
+  <vol:volcan vol:activité="endormi" vol:pays="France" vol:type="gris">
+    <vol:nom>Puy de Dôme</vol:nom>
+    <vol:endormi_depuis>P6000Y</vol:endormi_depuis>
+    <vol:altitude>1465</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>45.7723</vol:latitude>
+      <vol:longitude>2.9658</vol:longitude>
+    </vol:coordonnées>
+  </vol:volcan>
+  <vol:volcan vol:activité="actif" vol:pays="Russie" vol:type="gris">
+    <vol:nom>Sarytchev</vol:nom>
+    <vol:dernière_éruption>2009-06-21</vol:dernière_éruption>
+    <vol:altitude>1512</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>48.09</vol:latitude>
+      <vol:longitude>153.2</vol:longitude>
+    </vol:coordonnées>
+    <vol:roches>Andésite</vol:roches>
+  </vol:volcan>
+  <vol:volcan vol:activité="actif" vol:pays="Islande" vol:type="rouge">
+    <vol:nom>Eyjafjöll</vol:nom>
+    <vol:dernière_éruption>2010-10-27</vol:dernière_éruption>
+    <vol:altitude>1666</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>63.63</vol:latitude>
+      <vol:longitude>-19.62</vol:longitude>
+    </vol:coordonnées>
+    <vol:roches>Basalte</vol:roches>
+  </vol:volcan>
+  <vol:volcan vol:activité="actif" vol:pays="Philippines" vol:type="gris">
+    <vol:nom>Pinatubo</vol:nom>
+    <vol:dernière_éruption>1993-07</vol:dernière_éruption>
+    <vol:altitude>1486</vol:altitude>
+    <vol:coordonnées>
+      <vol:latitude>15.13</vol:latitude>
+      <vol:longitude>120.35</vol:longitude>
+    </vol:coordonnées>
+    <vol:roches>Andésite Basalte</vol:roches>
+  </vol:volcan>
+
+</vol:volcans>

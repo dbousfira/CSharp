@@ -1,0 +1,81 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_004_DataContext.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="176" Width="525"
+        xmlns:my="clr-namespace:ex_074_004_DataContext"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Grid Name="mGrid">
+        <Grid.Resources>
+            <!-- Même exemple que le précédent, mais cette fois-ci, on construit l'instance statique de Nounours
+                 en utilisant un constructeur avec des paramètres -->
+            <ObjectDataProvider x:Key="myNounours" ObjectType="{x:Type my:Nounours}">
+                <ObjectDataProvider.ConstructorParameters>
+                    <system:String>Babar</system:String>
+                    <!-- un exemple de l'appel d'une propriété statique -->
+                    <!--<x:Static Member="system:DateTime.Now"/>-->
+                    <system:DateTime>1931-1-1</system:DateTime>
+                    <system:Int32>34</system:Int32>
+                </ObjectDataProvider.ConstructorParameters>
+            </ObjectDataProvider>
+            <ObjectDataProvider x:Key="myNounours2" ObjectType="{x:Type my:Nounours}">
+                <ObjectDataProvider.ConstructorParameters>
+                    <system:String>Chucky</system:String>
+                    <system:DateTime>1988-11-9</system:DateTime>
+                    <system:Int32>66</system:Int32>
+                </ObjectDataProvider.ConstructorParameters>
+            </ObjectDataProvider>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        <!-- L'instance statique de Nounours associée à la clé myNounours est définie comme DataContext -->
+        <Grid.DataContext>
+            <Binding Source="{StaticResource myNounours}"/>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Nom"/>
+        <TextBlock Text="Date De Naissance" Grid.Column="1"/>
+        <TextBlock Text="NbPoils" Grid.Column="2"/>
+        <TextBlock Text="ToString" Grid.Column="3"/>
+        <!-- Si la Source n'est pas précisée, on utilise le DataContext en cours (celui du contrôle ou de son ancêtre le plus proche) -->
+        <TextBlock Text="{Binding Path=Nom}" Grid.Row="1"/>
+        <!-- Dans ce cas, il n'est même plus nécessaire de préciser le Path=, c'est implicite -->
+        <TextBlock Text="{Binding DateDeNaissance}" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Text="{Binding NbPoils}" Grid.Row="1" Grid.Column="2"/>
+        <!-- si on ne précise rien, la Source et le Path sont donc implictement le DataContext -->
+        <TextBlock Text="{Binding}" Grid.Row="1" Grid.Column="3"/>
+        
+        <!-- on peut ne pas utiliser le DataContext en utilisant à nouveau Source -->
+        <TextBlock Text="{Binding Source={StaticResource myNounours2}, Path=Nom}" Grid.Row="2"/>
+        <!-- on peut définir à nouveau le DataContext en attribut -->
+        <TextBlock DataContext="{StaticResource myNounours2}" 
+                   Text="{Binding Path=DateDeNaissance}" Grid.Row="2" Grid.Column="1"/>
+        <TextBlock DataContext="{StaticResource myNounours2}"
+                   Text="{Binding NbPoils}" Grid.Row="2" Grid.Column="2"/>
+        <TextBlock DataContext="{StaticResource myNounours2}"
+                   Text="{Binding}" Grid.Row="2" Grid.Column="3"/>
+    </Grid>
+</Window>
+

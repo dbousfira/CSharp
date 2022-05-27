@@ -1,0 +1,42 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_067_004_Tooltip.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock Text="Un tooltip affiche son contenu dans une boîte flottante lorsque la souris survole un contrôle. Dans l'exemple suivant, vous pouvez laissez votre souris survoler les trois boutons pour voir le résultat de trois tooltips." TextWrapping="Wrap"/>
+        <Button Content="Un bouton avec un Tooltip"
+                ToolTip="Une indication très intéressante"
+                HorizontalAlignment="Center" Margin="5"/>
+        <Button Content="Un autre bouton avec un Tooltip" HorizontalAlignment="Center" Margin="5">
+            <Button.ToolTip>
+                Une autre indication très intéressante
+            </Button.ToolTip>
+        </Button>
+        <Button Content="Un dernier bouton avec un Tooltip" HorizontalAlignment="Center" Margin="5">
+            <Button.ToolTip>
+                <StackPanel>
+                        <Label Content="Aide" Background="DarkBlue" Foreground="White" FontWeight="Bold" Width="200" 
+                       HorizontalContentAlignment="Center" VerticalAlignment="Center"
+                       Margin="4"/>
+                    <Line StrokeThickness="2" Stroke="Black" X2="200" Margin="4"/>
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <Image Source="aide.png" Height="32" Width="32"/>
+                    <TextBlock Margin="4" Text="Si vous avez besoin d'aide, ne comptez pas sur ce tooltip" TextWrapping="Wrap" Width="160"/>
+                    </StackPanel>
+                </StackPanel>
+            </Button.ToolTip>
+        </Button>
+        
+    </StackPanel>
+</Window>

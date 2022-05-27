@@ -1,0 +1,107 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_069_002_TextControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="525">
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="TextBlock" FontSize="16" FontWeight="ExtraBold" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5"/>
+            <TextBlock Grid.Row="1" TextWrapping="Wrap" Margin="5"
+                   Text="Une TextBlock permet de contenir du texte. Il est possible de modifier la police, la taille (etc...) du texte grâce à des propriétés comme FontStyle, Foreground , FontSize, FontWeight..."/>
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock FontFamily="Buxton Sketch" Text="FontFamily = Buxton Sketch" Margin="5"/>
+                <TextBlock FontSize="18" Text="FontSize = 18" Margin="5"/>
+                <TextBlock FontStyle="Italic" Text="FontStyle = Italic" Margin="5"/>
+                <TextBlock FontWeight="Bold" Text="FontWeight = Bold" Margin="5"/>
+                <TextBlock TextDecorations="Underline" Text="TextDecorations = Underline" Margin="5"/>
+                <TextBlock Foreground="Red" Text="Foreground = Red" Margin="5"/>
+                <TextBlock Background="Red" Text="Background = Red" Margin="5"/>
+            </StackPanel>
+            <TextBlock Grid.Row="2" TextWrapping="Wrap" Grid.ColumnSpan="2" TextAlignment="Justify" Margin="5"
+                   Text="Pour faire en sorte que le texte aille directement à la ligne lorsqu'il n'y a plus de place, on utilise l'attribut TextWrapping. On peut également justifier le texte avec l'attribut TextAlignment, etc... La TextBlock qui écrit ce texte utilise ces deux attributs."/>
+            <TextBlock Grid.Row="3" TextWrapping="Wrap" Margin="5"
+                   Text="Le texte peut être donné entre les balises TextBlock, ou dans l'attribut Text. Mais dans tous les cas, il est interprété comme s'il était donné dans un sous-élément Run. Les quatre TextBlock ci-contre ont une version XAML différente mais sont interprétées exactement de la même manière par le compilateur."/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
+                <TextBlock Text="du texte"/>
+                <TextBlock>du texte</TextBlock>
+                <TextBlock><Run Text="du texte"/></TextBlock>
+                <TextBlock><Run>du texte</Run></TextBlock>
+            </StackPanel>
+            <TextBlock Grid.Row="4" TextWrapping="Wrap" Margin="5"
+                   Text="Les Run deviennent particulièrement intéressants lorsqu'on en utilise plusieurs. En effet, ceux-ci possèdent exactement les mêmes propriétés que TextBlock et permettent de traiter des morceaux de texte différemment. L'exemple ci-contre est fait d'une seule TextBlock composée de plusieurs Run."/>
+            <StackPanel Grid.Row="4" Grid.Column="1" Margin="5">
+                <TextBlock TextWrapping="Wrap">
+                    <Run>Cette</Run>
+                    <Run FontWeight="Bold" FontSize="14">TextBlock</Run>
+                    <Run FontStyle="Italic">est faite</Run>
+                    <Run>de</Run>
+                    <Run TextDecorations="Underline" Foreground="Red">plusieurs</Run>
+                    <Run FontWeight="Bold" FontSize="16">Run</Run>
+                </TextBlock>
+            </StackPanel>
+            <TextBlock Grid.Row="5" Text="TextBox" FontSize="16" FontWeight="ExtraBold" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5"/>
+            <TextBlock Grid.Row="6" TextWrapping="Wrap" Margin="5"
+                   Text="Une TextBox permet à l'utilisateur de rentrer du texte. Elle possède des propriétés communes à TextBlock (TextWrapping, Font...). Elle possède également plusieurs caractéristiques intéressantes comme le copier coller qui est déjà reconnu. Il existe plusieurs événements à exploiter comme TextChanged ou LostFocus. Dans l'exemple ci-contre, la 1ère TextBlock voit son texte changer à chaque fois que le texte de la TextBox change, alors que la deuxième TextBlock voit son texte changer lorsque la TextBox perd le focus."/>
+            <StackPanel Margin="5" Grid.Row="6" Grid.Column="1">
+                <TextBox TextWrapping="Wrap" TextChanged="TextBox_TextChanged_1" LostFocus="TextBox_LostFocus_1"/>
+                <TextBox TextWrapping="Wrap" Name="test"/>
+                <TextBlock Name="mTextBlockWhenTextBoxChanged" TextWrapping="Wrap"/>
+                <TextBlock Name="mTextBlockWhenTextBoxLostFocus" TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="7" Text="RichTextBox" FontSize="16" FontWeight="ExtraBold" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5"/>
+            <TextBlock Grid.Row="8" TextWrapping="Wrap" Margin="5"
+                   Text="Une RichTextBox est une TextBox améliorée qui exploite les FlowDocuments (voir dans les exemples suivants)."/>
+            <RichTextBox Margin="5" Grid.Row="8" Grid.Column="1">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Foreground="Red">texte 1</Run>
+                    </Paragraph>
+                    <Paragraph>
+                        <Run FontStyle="Italic">texte 2</Run>
+                    </Paragraph>
+                    <Paragraph>
+                        <Run FontWeight="Bold">texte 3</Run>
+                    </Paragraph>
+                </FlowDocument>
+
+            </RichTextBox>
+
+            <TextBlock Grid.Row="9" Text="PasswordBox" FontSize="16" FontWeight="ExtraBold" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5"/>
+            <TextBlock Grid.Row="10" TextWrapping="Wrap" Margin="5"
+                   Text="Une TextBox dont les caractères du texte sont remplacés par des petits disques."/>
+            <StackPanel Grid.Column="1" Grid.Row="10" Margin="5">
+                <PasswordBox PasswordChanged="PasswordBox_PasswordChanged_1"/>
+                <TextBlock Name="mPasswordChanged"/>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

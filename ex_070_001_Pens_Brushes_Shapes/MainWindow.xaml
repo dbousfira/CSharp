@@ -1,0 +1,49 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_070_001_Pens_Brushes_Shapes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="5">
+            <Run>Un exemple très simple pour présenter les bases des dessins en 2D, et en particulier :</Run>
+            <LineBreak/>
+            <Run>- les "Pens" (crayons) pour dessiner des traits</Run>
+            <LineBreak/>
+            <Run>- les "Brushes" (pinceaux) pour colorier des formes</Run>
+            <LineBreak/>
+            <Run>- les "Shapes" (formes) de base pour dessiner des rectangles, des ellipses, etc...</Run>
+        </TextBlock>
+        
+        <TextBlock TextWrapping="Wrap" Margin="5"
+                   Grid.Row="1"
+                   Text="Un rectangle avec des Brushes choisies en XAML (tout ce qui commence par Stroke pour le Pen, et Fill pour le contenu)"/>
+        <Rectangle Grid.Row="1" Grid.Column="1" Width="50" Height="50"
+                   Stroke="Black" StrokeThickness="2" StrokeDashArray="2"
+                   Fill="Red"/>
+
+        <TextBlock TextWrapping="Wrap" Margin="5"
+                   Grid.Row="2"
+                   Text="Une ellipse avec des Brushes choisies en code-behind"/>
+        <Ellipse Grid.Row="2" Grid.Column="1" Width="50" Height="50" Name="mEllipse"
+                   />
+    </Grid>
+</Window>

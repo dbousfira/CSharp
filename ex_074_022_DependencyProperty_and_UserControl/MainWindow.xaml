@@ -1,0 +1,66 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_022_DependencyProperty_and_UserControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="190" Width="525"
+        xmlns:my="clr-namespace:ex_074_022_DependencyProperty_and_UserControl"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        x:Name="mWindow">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <!-- collection statique de nounours -->
+        <my:Lit x:Key="mLit"/>
+
+        <!-- template d'affichage des détails d'un Nounours (le DataContext dépend de celui qui utilisera
+              le DataTemplate : ce sera un DataContext de type Nounours) -->
+        <DataTemplate x:Key="NounoursDétails">
+            <my:UserControlNounoursDétails Nom="{Binding Nom}" 
+                                           Naissance="{Binding DateDeNaissance}"
+                                           Poils="{Binding NbPoils}"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <StackPanel>
+        <TextBlock Text="Nounours dans mon lit"/>
+        <!-- La ListBox listant tous les Nounours du Lit.
+                La propriété ItemsSource est "bindée" à mLit, i.e. une collection de Nounours -->
+        <ListBox IsSynchronizedWithCurrentItem="True"
+                 ItemsSource="{StaticResource mLit}">
+            <!-- par défaut, on utilise le ToString des instances de la collection, 
+                 mais on peut proposer un autre template pour les items dans la ListBox,
+                 à l'aide de la propriété ItemTemplate 
+                 (on aurait pu la lier à un DataTemplate défini dans les ressources statiques ;
+                    essayez par exemple de rajouter l'attribut ItemTemplate="{StaticResource NounoursDétails}") -->
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Nom}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+        </ListBox>
+
+        <TextBlock Text="Détails sur ce nounours"/>
+        <!-- Un ContentControl est lié à une collection mais n'affiche que l'élément "courant" de l'ObservableCollection.
+             Puisque la ListBox est "synchronisée" (IsSynchronizedWithCurrentItem = true),
+             l'élément courant de l'ObservableCollection (Lit) est l'élément sélectionné dans la ListBox.
+             Content définit donc la collection d'objets.
+             ContentTemplate définit le template d'affichage de l'élément courant. -->
+        <ContentControl Content="{Binding Source={StaticResource mLit}}"
+                        ContentTemplate="{StaticResource NounoursDétails}"/>
+    </StackPanel>
+
+    <!-- cet exemple est un cas classique d'utilisation connu sous le nom : Master-Detail View -->
+</Window>
+

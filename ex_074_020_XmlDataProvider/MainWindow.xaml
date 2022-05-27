@@ -1,0 +1,57 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_020_XmlDataProvider.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <XmlDataProvider x:Key="xmlVolcans" Source="volcans.xml"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource xmlVolcans}"/>
+    </Window.DataContext>
+    <DockPanel>
+        <ListBox Name="mListBox" DockPanel.Dock="Top" ItemsSource="{Binding XPath=//volcan[nom]}" IsSynchronizedWithCurrentItem="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding XPath=nom}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ContentControl Content="{Binding ElementName=mListBox,Path=ItemsSource}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Nom :"/>
+                        <TextBlock Text="Altitude :" Grid.Row="1"/>
+                        <TextBlock Text="Longitude :" Grid.Row="2"/>
+                        <TextBlock Text="Latitude :" Grid.Row="3"/>
+                        <TextBlock Text="{Binding XPath=nom}" Grid.Column="1"/>
+                        <TextBlock Text="{Binding XPath=altitude}" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="{Binding XPath=coordonnées/longitude}" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="{Binding XPath=coordonnées/latitude}" Grid.Column="1" Grid.Row="3"/>
+                    </Grid>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+    </DockPanel>
+</Window>

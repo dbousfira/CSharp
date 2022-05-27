@@ -1,0 +1,31 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_017_Enum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:my="clr-namespace:ex_074_017_Enum"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Window.Resources>
+        <ObjectDataProvider MethodName="GetValues"
+                            ObjectType="{x:Type system:Enum}"
+                            x:Key="mEnum">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="my:GreatHouses"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="Valeurs de l'enum GreatHouses"/>
+        <ListBox ItemsSource="{Binding Source={StaticResource mEnum}}"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,79 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_013_Collection_View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="290" Width="525"
+        xmlns:my="clr-namespace:ex_074_013_Collection_View"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        x:Name="mWindow">
+    <Window.Resources>
+        <my:Lit x:Key="mLit"/>
+        <CollectionViewSource x:Key="LitView" Source="{Binding Source={StaticResource mLit}}"/>
+        <DataTemplate x:Key="NounoursDétails">
+            <Border BorderThickness="2" Padding="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Nom : " HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Grid.Row="0" Grid.Column="0"/>
+                    <TextBlock Text="Date de naissance : " HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Grid.Row="1" Grid.Column="0"/>
+                    <TextBlock Text="Nombre de poils : " HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock Text="{Binding Path=Nom}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock Text="{Binding Path=DateDeNaissance}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Text="{Binding Path=NbPoils}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Grid.Row="2" Grid.Column="1"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="Nounours dans mon lit"/>
+        <ListBox Name="mListBox" 
+                 ItemsSource="{Binding Source={StaticResource LitView}}"
+                 IsSynchronizedWithCurrentItem="True"/>
+        <TextBlock Text="Détails sur ce nounours"/>
+        <ContentControl Content="{Binding Source={StaticResource LitView}}"
+                        ContentTemplate="{StaticResource NounoursDétails}"/>
+        <WrapPanel>
+            <TextBlock Text="Modifier l'élément courant : "/>
+            <Button Name="mButtonPrevious" Content="Précédent" Click="Button_Click"/>
+            <Button Name="mButtonNext" Content="Suivant" Click="Button_Click"/>
+        </WrapPanel>
+        <WrapPanel>
+            <TextBlock Text="Tri : "/>
+            <Button Name="mButtonTriAlpha" Content="Ordre alpha" Click="Button_Click_1"/>
+            <Button Name="mButtonTriAlphaInv"  Content="Ordre alpha inversé" Click="Button_Click_1"/>
+            <Button Name="mButtonTriNaissance" Content="Ordre Naissance" Click="Button_Click_1"/>
+            <Button Name="mButtonTriNaissanceInv" Content="Ordre Naissance Inversé" Click="Button_Click_1"/>
+            <Button Name="mButtonTriPoils" Content="Ordre Nb Poils" Click="Button_Click_1"/>
+            <Button Name="mButtonTriPoilsInv" Content="Ordre Nb Poils Inversé" Click="Button_Click_1"/>
+        </WrapPanel>
+        <WrapPanel>
+            <TextBlock Text="Filtrage : "/>
+            <Button Content="Nounours de moins de 100 poils" Click="Button_Click_2"/>
+            <Button Content="pas de filtrage" Click="Button_Click_3"/>
+        </WrapPanel>
+    </StackPanel>
+</Window>
+

@@ -1,0 +1,19 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_065_003_Explicit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="Explicit Application Creation" Height="28" HorizontalAlignment="Left" Margin="152,132,0,0" Name="label1" VerticalAlignment="Top" />
+    </Grid>
+</Window>

@@ -1,0 +1,151 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_002_ListBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="525">
+    <ScrollViewer>
+    <StackPanel>
+        <TextBlock Text="Une première ListBox qui contient 3 items sous forme de textes rentrés en XAML"
+                   TextWrapping="Wrap"/>
+        <ListBox SelectedIndex="0" HorizontalAlignment="Center">
+            <TextBlock Text="item1"/>
+            <TextBlock Text="item2"/>
+            <TextBlock Text="item3"/>
+        </ListBox>
+        <TextBlock Text="Une 2ème ListBox qui contient une collection de Nounours construite en code-behind (propriété ItemsSource de la ListBox). Chaque Nounours est affiché dans la ListBox à l'aide du ToString de la classe Nounours. "
+                   TextWrapping="Wrap"/>
+        <ListBox Name="mListBox2" HorizontalAlignment="Center" SelectedIndex="0"></ListBox>
+        <TextBlock Text="Une 3ème ListBox qui est comme la précédente, mais qui utilise l'attribut DisplayMemberPath pour dire quelle propriété utiliser pour représenter chaque item (à la place du ToString). Note: DisplayMemberPath existe aussi pour les autres ItemsControls (comme la ComboBox, la ListView...)."
+                   TextWrapping="Wrap"/>
+        <ListBox Name="mListBox3" DisplayMemberPath="Nom"
+                  HorizontalAlignment="Center" SelectedIndex="0">
+            </ListBox>
+        <TextBlock Text="Une 4ème ListBox pour montrer que les items peuvent être plus complexes."
+                   TextWrapping="Wrap"/>
+        <ListBox Name="mListBox4" HorizontalAlignment="Center" SelectedIndex="0">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="babar.gif"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Babar"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 1er janvier 1931"/>
+                    <TextBlock Text="31 poils"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="chucky.jpg"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Chucky"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 9 novembre 1988"/>
+                    <TextBlock Text="66 poils"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="gizmo.png"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Gizmo"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 8 juin 1984"/>
+                    <TextBlock Text="1000000 poils"/>
+                </StackPanel>
+            </StackPanel>
+        </ListBox>
+        <TextBlock Text="Une 5ème ListBox comme la précédente, mais avec des items disposés horizontalement."
+                   TextWrapping="Wrap"/>
+        <ListBox HorizontalAlignment="Center" SelectedIndex="0">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="babar.gif"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Babar"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 1er janvier 1931"/>
+                    <TextBlock Text="31 poils"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="chucky.jpg"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Chucky"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 9 novembre 1988"/>
+                    <TextBlock Text="66 poils"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="gizmo.png"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Gizmo"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 8 juin 1984"/>
+                    <TextBlock Text="1000000 poils"/>
+                </StackPanel>
+            </StackPanel>
+        </ListBox>
+        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center"
+                   Text="Les 3 modes de sélection pour la ListBox"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Single (par défaut) : On ne peut sélectionner qu'un élément à la fois." 
+                       TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5"/>
+            <ListBox Grid.Row="1" SelectionMode="Single" Margin="5" SelectionChanged="ListBox_SelectionChanged_1">
+                <TextBlock Text="item1"/>
+                <TextBlock Text="item2"/>
+                <TextBlock Text="item3"/>
+                <TextBlock Text="item4"/>
+                <TextBlock Text="item5"/>
+                <TextBlock Text="item6"/>
+            </ListBox>
+                <TextBlock Grid.Row="2" Name="mTextBlockSingle" TextWrapping="Wrap"/>
+
+                <TextBlock Grid.Column="1" Text="Multiple : On peut sélectionner plusieurs éléments." 
+                       TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5"/>
+                <ListBox Grid.Column="1" Grid.Row="1" SelectionMode="Multiple" Margin="5" SelectionChanged="ListBox_SelectionChanged_2">
+                    <TextBlock Text="item1"/>
+                    <TextBlock Text="item2"/>
+                    <TextBlock Text="item3"/>
+                    <TextBlock Text="item4"/>
+                    <TextBlock Text="item5"/>
+                    <TextBlock Text="item6"/>
+                </ListBox>
+                <TextBlock TextWrapping="Wrap" Grid.Row="2" Name="mTextBlockMultiple" Grid.Column="1"/>
+
+            <TextBlock Grid.Column="2" Text="Extended : On peut sélectionner plusieurs éléments à l'aide de Shift et Ctrl." 
+                       TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5"/>
+            <ListBox Grid.Column="2" Grid.Row="1" SelectionMode="Extended" Margin="5" SelectionChanged="ListBox_SelectionChanged_3">
+                <TextBlock Text="item1"/>
+                <TextBlock Text="item2"/>
+                <TextBlock Text="item3"/>
+                <TextBlock Text="item4"/>
+                <TextBlock Text="item5"/>
+                <TextBlock Text="item6"/>
+            </ListBox>
+            <TextBlock TextWrapping="Wrap" Grid.Row="2" Name="mTextBlockExtended" Grid.Column="2"/>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

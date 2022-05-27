@@ -1,0 +1,31 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_006_ContextMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock Text="Un ContextMenu fonctionne exactement comme un Menu mais est associé à un contrôle et accessible via un click droit ou Shift+F10"
+                   TextWrapping="Wrap" Margin="5"/>
+        <ListBox HorizontalAlignment="Center" Height="Auto">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Ajouter un élément"/>
+                    <MenuItem Header="Supprimer un élément"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <TextBlock>un</TextBlock>
+            <TextBlock>deux</TextBlock>
+            <TextBlock>trois</TextBlock>
+        </ListBox>
+    </StackPanel>
+</Window>

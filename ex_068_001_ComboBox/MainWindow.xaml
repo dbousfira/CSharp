@@ -1,0 +1,66 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_001_ComboBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="525">
+    <StackPanel>
+        <TextBlock Text="Une première comboBox qui contient 3 items sous forme de textes rentrés en XAML"
+                   TextWrapping="Wrap"/>
+        <ComboBox SelectedIndex="0" HorizontalAlignment="Center">
+            <TextBlock Text="item1"/>
+            <TextBlock Text="item2"/>
+            <TextBlock Text="item3"/>
+        </ComboBox>
+        <TextBlock Text="Une 2ème comboBox qui contient une collection de Nounours construite en code-behind (propriété ItemsSource de la combobox). Chaque Nounours est affiché dans la ComboBox à l'aide du ToString de la classe Nounours. "
+                   TextWrapping="Wrap"/>
+        <ComboBox Name="mComboBox2" HorizontalAlignment="Center" SelectedIndex="0"></ComboBox>
+        <TextBlock Text="Une 3ème ComboBox qui est comme la précédente, mais qui utilise l'attribut DisplayMemberPath pour dire quelle propriété utiliser pour représenter chaque item (à la place du ToString). Note: DisplayMemberPath existe aussi pour les autres ItemsControls (comme la ListBox, la ListView...). Elle met également en évidence l'utilisation de l'événement SelectionChanged."
+                   TextWrapping="Wrap"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ComboBox Name="mComboBox3" DisplayMemberPath="Nom" SelectionChanged="mComboBox3_SelectionChanged_1"
+                  HorizontalAlignment="Center" SelectedIndex="0"></ComboBox>
+            <TextBlock Name="mTextBlockSelectionChanged" Margin="5"/>
+        </StackPanel>
+        <TextBlock Text="Une 4ème ComboBox pour montrer que les items peuvent être plus complexes."
+                   TextWrapping="Wrap"/>
+        <ComboBox Name="mComboBox4" HorizontalAlignment="Center" SelectedIndex="0">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="babar.gif"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Babar"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 1er janvier 1931"/>
+                    <TextBlock Text="31 poils"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="chucky.jpg"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Chucky"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 9 novembre 1988"/>
+                    <TextBlock Text="66 poils"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="100" Height="100" Source="gizmo.png"/>
+                <StackPanel Margin="5">
+                    <TextBlock FontWeight="Bold" Text="Gizmo"/>
+                    <Line Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock Text="né le 8 juin 1984"/>
+                    <TextBlock Text="1000000 poils"/>
+                </StackPanel>
+            </StackPanel>
+        </ComboBox>
+    </StackPanel>
+</Window>

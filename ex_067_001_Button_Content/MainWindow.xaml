@@ -1,0 +1,44 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_067_001_Button_Content.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Incredible WPF Application" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="216" d:DesignWidth="310" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Button Height="123" 
+                HorizontalAlignment="Left" 
+                Margin="12,12,0,0" 
+                Name="button1" 
+                VerticalAlignment="Top" 
+                Width="230" 
+                Click="button1_Click" MouseEnter="button1_MouseEnter" MouseLeave="button1_MouseLeave" MouseDoubleClick="button1_MouseDoubleClick" DragEnter="button1_DragEnter_1" DragOver="button1_DragOver">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="Rainn_Wilson.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center">Click me if you dare !</TextBlock>
+                    <Ellipse Name="mEllipse" Grid.Column="1" Grid.Row="0" Width="20" Height="80" Stroke="Black" Fill="Green"/>
+                    <Rectangle Width="20" Height="20" Fill="BurlyWood" Grid.Column="1" Grid.Row="1" Stroke="Red"/>
+                </Grid>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

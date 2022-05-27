@@ -1,0 +1,46 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_005_Menu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier">
+                <MenuItem Header="_Nouveau">
+                    <MenuItem Header="Nouveau F_ichier" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="Nouveau P_rojet" Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="_Ouvrir dossier" Click="MenuItem_Click_1">
+                    <MenuItem.Icon>
+                        <Image Source="icones/ouvrirDossier.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Enregistrer" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Enregistrer _sous" Click="MenuItem_Click_1"/>
+                <Separator/>
+                <MenuItem IsCheckable="True" Header="Texte en bleu" Checked="MenuItem_Checked_1" Unchecked="MenuItem_Checked_1"/>
+            </MenuItem>
+            <MenuItem Header="Edition"/>
+        </Menu>
+        <StackPanel>
+            <TextBlock Name="mTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Separator/>
+            <TextBlock TextWrapping="Wrap" Text="Le caractère Underscore permet de dire quelle lettre sera utilisée pour le raccourci clavier (avec Alt + la lettre)."/>
+            <TextBlock TextWrapping="Wrap" Text="On peut mettre des séparateurs entre les menus."/>
+            <TextBlock TextWrapping="Wrap" Text="On peut rajouter des icônes."/>
+            <TextBlock TextWrapping="Wrap" Text="On peut rendre un menu item checkable."/>
+            <TextBlock TextWrapping="Wrap" Text="L'exemple montre aussi l'utilisation d'événements sur les MenuItems."/>
+        </StackPanel>
+    </DockPanel>
+</Window>

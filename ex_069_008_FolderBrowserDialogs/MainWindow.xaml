@@ -1,0 +1,39 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_069_008_FolderBrowserDialogs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Click="Button_Click_1">
+                    <Image Source="icones/ouvrirDossier.png"/>
+                </Button>
+                <Button Click="Button_Click_2">
+                    <Image Source="icones/enregistrerImage.png"/>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <StackPanel>
+            <TextBlock TextWrapping="Wrap" Margin="5">
+                <Run>Cet exemple montre comment utiliser les dialogues Win32 OpenFileDialog et SaveFileDialog.</Run>
+                <Run>Il permet d'ouvrir une image et de l'enregistrer.</Run>
+                <Run>Pour en savoir plus sur la gestion des dialogues Win32, vous pouvez visiter la page suivante : </Run>
+                <Hyperlink>http://msdn.microsoft.com/en-us/library/aa969773(v=vs.110).aspx</Hyperlink>
+            </TextBlock>
+            <Viewbox>
+                <Image Name="mImage"/>
+            </Viewbox>
+        </StackPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,23 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_073_001_BinaryResources.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <WrapPanel>
+        <Image Source="Images/steve_carell.jpg" Height="150"/>
+        <Image Source="Images/Kate_Flannery.jpg" Height="150"/>
+        
+        <!-- attention, ne marche que si l'image a la propriété "Action de génération" égale à "Resource" (F4 !) -->
+        <Image Source="/ex_073_001_BinaryResources_assembly;Component/Images/Rainn_Wilson.jpg" Height="150"/>
+    </WrapPanel>
+</Window>

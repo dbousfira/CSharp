@@ -1,0 +1,25 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_066_001_StackPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Background="Azure" Margin="102,0,276,0">
+            <TextBlock Margin="3">coucou</TextBlock>
+            <Button Margin="3" Content="un bouton"/>
+            <Button Margin="3" Content="un autre bouton"/>
+            <TextBlock Margin="3">Un autre coucou</TextBlock>
+            <Button Content="bouton" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

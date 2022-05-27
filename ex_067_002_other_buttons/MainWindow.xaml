@@ -1,0 +1,58 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_067_002_other_buttons.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="550" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- RepeatButton : lorsqu'on laisse le bouton pressé, l'événement Click ne cesse d'être envoyé.
+             Il attend Delay millisecondes avant de démarrer l'envoi des événements, puis attend Interval millisecondes 
+             entre chaque événement. -->
+        <StackPanel>
+            <TextBlock Text="RepeatButton : lorsqu'on laisse le bouton pressé, l'événement Click ne cesse d'être envoyé. Il attend Delay millisecondes avant de démarrer l'envoi des événements, puis attend Interval millisecondes entre chaque événement." TextWrapping="Wrap" Margin="5"/>
+            <RepeatButton Content="Repeat Button" VerticalAlignment="Center" HorizontalAlignment="Center" Click="RepeatButton_Click_1"/>
+        </StackPanel>
+        <TextBlock Name="mTextBlockPourRepeatButton" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="ToggleButton : garde son état quand il est cliqué (pressé ou non pressé)." TextWrapping="Wrap" Margin="5"/>
+            <ToggleButton Content="Toggle Button" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ToggleButton_Click_1"/>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Name="mTextBlockPourToggleButton" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="CheckBox : différents états en fonction du click" TextWrapping="Wrap" Margin="5"/>
+            <CheckBox Content="CheckBox" VerticalAlignment="Center" HorizontalAlignment="Center" Click="CheckBox_Click" />
+        </StackPanel>
+        <TextBlock Grid.Row="2" Name="mTextBlockPourCheckBox" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="RadioButton : par défaut, tous les RadioButton partageant le même père sont regroupés et s'excluent mutuellement." TextWrapping="Wrap" Margin="5"/>
+            <RadioButton Content="Option1" Click="RadioButton_Click_1" />
+            <RadioButton Content="Option2" Click="RadioButton_Click_1" />
+            <RadioButton Content="Option3" Click="RadioButton_Click_1" />
+        </StackPanel>
+        <TextBlock Grid.Row="3" Name="mTextBlockPourRadioButton" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+    </Grid>
+</Window>

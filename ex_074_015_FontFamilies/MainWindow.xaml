@@ -1,0 +1,39 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_015_FontFamilies.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListBox DataContext="{x:Static Fonts.SystemFontFamilies}"
+                 ItemsSource="{Binding}"
+                 HorizontalContentAlignment="Stretch"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="5"
+                            CornerRadius="4"
+                            BorderThickness="1" BorderBrush="Red" Margin="2">
+                        <StackPanel>
+                            <TextBlock Margin="2,2"
+                                       Text="{Binding Source}" FontWeight="Bold" />
+                            <TextBlock FontFamily="{Binding Source}"
+                                       Margin="20,3"
+                                       Foreground="DarkRed">Un Binding vraiment marrant</TextBlock>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
+

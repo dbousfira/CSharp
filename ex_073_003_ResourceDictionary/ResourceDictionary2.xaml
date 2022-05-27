@@ -1,0 +1,18 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : ResourceDictionary2.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="backgroundBrush">Yellow</SolidColorBrush>
+    <SolidColorBrush x:Key="borderBrush">Green</SolidColorBrush>
+    <SolidColorBrush x:Key="foregroundBrush">Red</SolidColorBrush>
+    <Thickness x:Key="margin">5</Thickness>
+</ResourceDictionary>

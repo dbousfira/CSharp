@@ -1,0 +1,31 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="ex_069_006_Calendar_Date_Pickers.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Margin="5"
+                   Text="Le contrôle Calendar permet d'afficher un calendrier (au mois, à l'année ou à la décade). Le DatePicker permet de sélectionner une date. Dans l'exemple ci-dessous, les dates des vacances d'hiver ont été mises en BlackOut, le calendrier ne commence qu'à la date d'aujourd'hui, et la date sélectionnée par le DatePicker est sélectionnée dans le Calendar."/>
+        <Calendar SelectionMode="MultipleRange" Name="mCalendar">
+            <Calendar.BlackoutDates>
+                <CalendarDateRange End="2014-01-06" Start="2013-12-21"/>
+            </Calendar.BlackoutDates>
+            <Calendar.SelectedDates>
+                <System:DateTime>2014-01-17</System:DateTime>
+                <System:DateTime>2014-01-20</System:DateTime>
+            </Calendar.SelectedDates>
+        </Calendar>
+        <DatePicker HorizontalAlignment="Center" SelectedDateChanged="DatePicker_SelectedDateChanged_1"/>
+    </StackPanel>
+</Window>

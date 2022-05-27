@@ -1,0 +1,76 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_006_UpdateSourceTrigger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="209" Width="525"
+        xmlns:my="clr-namespace:ex_074_006_UpdateSourceTrigger"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Grid Name="mGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <ObjectDataProvider x:Key="myNounours" ObjectType="{x:Type my:Nounours}">
+                <ObjectDataProvider.ConstructorParameters>
+                    <system:String>Babar</system:String>
+                    <!--<x:Static Member="system:DateTime.Now"/>-->
+                    <system:DateTime>1931-1-1</system:DateTime>
+                    <system:Int32>34</system:Int32>
+                </ObjectDataProvider.ConstructorParameters>
+            </ObjectDataProvider>
+        </Grid.Resources>
+        <Grid.DataContext>
+            <Binding Source="{StaticResource myNounours}"/>
+        </Grid.DataContext>
+
+        <!-- La propriété Nom de la Source sera mise à jour à chaque fois que la propriété Text de la TextBox
+             sera modifiée -->
+        <TextBox Text="{Binding Path=Nom, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="0"/>
+        <!-- la propriété Text de la TextBlock se mettra automatiquement à jour lorsque la propriété Nom de la 
+             Source changera, car Nounours implémente INotifyPropertyChanged et que le setter de Nom 
+             appelle OnNotifyPropertyChanged -->
+        <TextBlock Text="{Binding Path=Nom}"
+                Width="90"
+                Height="30"
+                   Grid.Column="1"/>
+        
+        <!-- La propriété DateDeNaissance de la Source sera mise à jour à chaque fois que la TextBox perdra le focus -->
+        <TextBox Text="{Binding Path=DateDeNaissance, UpdateSourceTrigger=LostFocus}" Grid.Row="1" Grid.Column="0"/>
+        <!-- la propriété Text de la TextBlock se mettra automatiquement à jour lorsque la propriété DateDeNaissance de la 
+             Source changera, car Nounours implémente INotifyPropertyChanged et que le setter de DateDeNaissance 
+             appelle OnNotifyPropertyChanged -->
+        <TextBlock Text="{Binding Path=DateDeNaissance}"
+                Width="150"
+                Height="30"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+        <!-- La propriété NbPoils de la Source sera mise à jour à chaque fois que l'utilisateur le demandera en cliquant sur OK -->
+        <TextBox Name="mTextBoxNbPoils" Text="{Binding Path=NbPoils, UpdateSourceTrigger=Explicit}" Grid.Row="2" Grid.Column="0"/>
+        <!-- la propriété Text de la TextBlock se mettra automatiquement à jour lorsque la propriété NbPoils de la 
+             Source changera, car Nounours implémente INotifyPropertyChanged et que le setter de NbPoils 
+             appelle OnNotifyPropertyChanged -->
+        <TextBlock Text="{Binding Path=NbPoils}"
+                Width="90"
+                Height="30" 
+                   Grid.Row="2" Grid.Column="1"/>
+
+        <Button Name="mButtonOK" Content="OK" Grid.Row="3" Grid.Column="0" Click="mButtonOK_Click"/>
+    </Grid>
+</Window>

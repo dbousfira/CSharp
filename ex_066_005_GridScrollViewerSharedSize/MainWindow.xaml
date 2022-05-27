@@ -1,0 +1,111 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_066_005_GridScrollViewerSharedSize.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="250" Width="525">
+    <DockPanel Grid.IsSharedSizeScope="True">
+        <DockPanel.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="5,3"/>
+            </Style>
+        </DockPanel.Resources>
+        <ScrollViewer DockPanel.Dock="Top" Height="100">
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Artiste"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Année"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" BorderThickness="1" Background="Beige" BorderBrush="Maroon">
+                    <TextBlock>Titre</TextBlock>
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" BorderThickness="1" Background="Beige" BorderBrush="Maroon">
+                    <TextBlock>Musicien</TextBlock>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="0" BorderThickness="1" Background="Beige" BorderBrush="Maroon">
+                    <TextBlock>Année</TextBlock>
+                </Border>
+                <TextBlock Grid.Row="1" Grid.Column="0">Kind Of Blue</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1">Miles Davis</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2">1959</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0">Know What I Mean ?</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1">Cannonball Adderley</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="2">1962</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0">Head Hunters</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="1">Herbie Hancock</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="2">1973</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0">Heavy Metal Bebop</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="1">The Brecker Brothers</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="2">1978</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="0">Carnets de Route</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="1">Romano, Sclavis, Texier</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="2">1995</TextBlock>
+            </Grid>
+        </ScrollViewer>
+        <ScrollViewer>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Artiste"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Année"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" BorderThickness="1" Background="Beige" BorderBrush="Maroon">
+                    <TextBlock>Titre</TextBlock>
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" BorderThickness="1" Background="Beige" BorderBrush="Maroon">
+                    <TextBlock>Réalisateur</TextBlock>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="0" BorderThickness="1" Background="Beige" BorderBrush="Maroon">
+                    <TextBlock>Année</TextBlock>
+                </Border>
+                <TextBlock Grid.Row="1" Grid.Column="0">O'Brother</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1">Joel et Ethan Coen</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2">2000</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0">Dead Man</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1">Jim Jarmush</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="2">1995</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0">Kill Bill</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="1">Quentin Tarnatino</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="2">2003</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0">Sleepy Hollow</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="1">Tim Burton</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="2">1999</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="0">To Be Or Not To Be</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="1">Ernst Lubitsch</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="2">1942</TextBlock>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

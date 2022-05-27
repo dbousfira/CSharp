@@ -1,0 +1,43 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_067_003_containers_Label.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock TextWrapping="Wrap" Text="Un label peut contenir plusieurs éléments, mais généralement du texte" />
+            <Label Content="un label" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock TextWrapping="Wrap" Text="L'intérêt du Label est qu'il permet de traiter de manière spéciale les caractères, grâce à underscore. Le caractère précédé d'un underscore sert de raccourci lorsqu'on appuie sur Alt puis se caractère pour donner le focus à la cible (Target) du Label." />
+            <TextBlock TextWrapping="Wrap" Text="Appuyez sur Alt+O ou Alt+F pour donner le focus à l'une des TextBox ci-contre." />
+            <Label Target="ouvrirTextBox" Content="_Ouvrir fichier"/>
+            <Label Target="fermerTextBox" Content="_Fermer fichier"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom">
+            <TextBox Name="ouvrirTextBox" Text="OuvrirFichier"/>
+            <TextBox Name="fermerTextBox" Text="FermerFichier"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>

@@ -1,0 +1,47 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_073_003_ResourceDictionary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Background="{StaticResource backgroundBrush}">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="a" Background="Yellow" BorderBrush="Red" Foreground="Red" Margin="5"/>
+            <Button Content="b" Background="Yellow" BorderBrush="Red" Foreground="Red" Margin="5"/>
+            <Button Content="c" Background="Yellow" BorderBrush="Red" Foreground="Red" Margin="5"/>
+            <Button Content="d" Background="Yellow" BorderBrush="Red" Foreground="Red" Margin="5"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="a" Background="{StaticResource backgroundBrush}" 
+                                BorderBrush="{StaticResource borderBrush}" 
+                                Foreground="{StaticResource foregroundBrush}"
+                                Margin="{StaticResource margin}">
+            </Button>
+            <Button Content="b" Background="{StaticResource backgroundBrush}" 
+                                BorderBrush="{StaticResource borderBrush}" 
+                                Foreground="{StaticResource foregroundBrush}"
+                                Margin="{StaticResource margin}"/>
+            <Button Content="c" Background="{StaticResource backgroundBrush}" 
+                                BorderBrush="{StaticResource borderBrush}" 
+                                Foreground="{StaticResource foregroundBrush}"
+                                Margin="{StaticResource margin}"/>
+            <Button Content="d" Background="{StaticResource backgroundBrush}" 
+                                BorderBrush="{StaticResource borderBrush}" 
+                                Foreground="{StaticResource foregroundBrush}"
+                                Margin="{StaticResource margin}"/>
+        </StackPanel>
+        <ListBox/>
+    </DockPanel>
+</Window>

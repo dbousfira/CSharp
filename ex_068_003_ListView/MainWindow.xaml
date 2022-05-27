@@ -1,0 +1,39 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_003_ListView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Margin="5"
+                   Text="La ListView est comme la ListBox sauf qu'elle utilise le mode Extended par défaut et propose des Views sur les items."/>
+        <TextBlock TextWrapping="Wrap" Margin="5"
+                   Text="La ListView suivante voit sa propriété ItemsSource remplie en code-behind. On précise ensuite en XAML ce que contiendront les différentes colonnes. La notation Binding sera expliquée plus tard."/>
+        <ListView Name="mListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Photo">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageSource}" Width="50" Height="50"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Naissance" DisplayMemberBinding="{Binding DateDeNaissance}"/>
+                    <GridViewColumn Header="Poils" DisplayMemberBinding="{Binding NbPoils}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </StackPanel>
+</Window>

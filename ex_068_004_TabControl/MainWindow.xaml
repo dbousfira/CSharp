@@ -1,0 +1,85 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_004_TabControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="525">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Résumé">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Source="images/mandela01.jpg" VerticalAlignment="Top"/>
+                    <StackPanel Grid.Column="1">
+                        <Label Margin="5" Foreground="White" Background="DarkBlue" Content="Nelson Mandela" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="15"/>
+                        <Label Margin="5" Foreground="White" Background="DarkBlue" Content="Fonctions" HorizontalContentAlignment="Center"/>
+                        <Label Margin="5" Foreground="DarkBlue" Background="LightBlue" Content="1er président de la République d'Afrique du Sud" HorizontalContentAlignment="Center"/>
+                        <Label Margin="5" Foreground="DarkBlue" Background="LightBlue" Content="Secrétaire général du Mouvement des non alignés" HorizontalContentAlignment="Center"/>
+                        <Label Margin="5" Foreground="White" Background="DarkBlue" Content="Biographie" HorizontalContentAlignment="Center"/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Date de naissance" TextWrapping="Wrap"/>
+                            <TextBlock Text="18 juillet 1918" Foreground="DarkBlue" Grid.Column="1"/>
+                            <TextBlock Grid.Row="1" Text="Lieu de naissance" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="1" Text="Mvezo (Province du Cap, Afrique du Sud)" TextWrapping="Wrap" Foreground="DarkBlue" Grid.Column="1"/>
+                            <TextBlock Grid.Row="2" Text="Date de décès" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="2" Text="5 décembre 2013" TextWrapping="Wrap" Foreground="DarkBlue" Grid.Column="1"/>
+                            <TextBlock Grid.Row="3" Text="Lieu de décès" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="3" Text="Johannesburg (Afrique du Sud)" TextWrapping="Wrap" Foreground="DarkBlue" Grid.Column="1"/>
+                            <TextBlock Grid.Row="4" Text="Nationalité" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="4" Text="sud-africaine" TextWrapping="Wrap" Foreground="DarkBlue" Grid.Column="1"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Biographie">
+                <ScrollViewer>
+                    <TextBlock TextWrapping="Wrap">Nelson Rolihlahla Mandela (prononcé en xhosa [xoˈliːɬaɬa manˈdeːla]), dont le nom du clan tribal est « Madiba », né le 18 juillet 19181 à Mvezo2 (Union d'Afrique du Sud) et mort le 5 décembre 2013 à Johannesburg3, est un homme d'État sud-africain ; il a été l'un des dirigeants historiques de la lutte contre le système politique de ségrégation raciale (apartheid) avant de devenir président de la République d'Afrique du Sud de 1994 à 1999, à la suite des premières élections nationales non raciales de l'histoire du pays.
+ 
+Nelson Mandela entre au Congrès national africain (ANC) en 1944, afin de lutter contre la domination politique de la minorité blanche et la ségrégation raciale menée par celle-ci. Devenu avocat, il participe à la lutte non violente contre les lois de l'apartheid, mises en place par le gouvernement du Parti national à partir de 1948. L'ANC est interdit en 1960, et la lutte pacifique ne donnant pas de résultats tangibles, Mandela fonde et dirige la branche militaire de l'ANC, Umkhonto we Sizwe, en 1961, qui mène une campagne de sabotage contre des installations publiques et militaires. Le 12 juillet 1963, il est arrêté par la police sud-africaine sur indication de la CIA, puis est condamné à la prison et aux travaux forcés à perpétuité lors du procès de Rivonia. Dès lors, il devient un symbole de la lutte pour l'égalité raciale et bénéficie d'un soutien international croissant.
+ 
+Après vingt-sept années d'emprisonnement dans des conditions souvent très dures, Mandela est relâché le 11 février 1990, et soutient la réconciliation et la négociation avec le gouvernement du président Frederik de Klerk. En 1993, il reçoit avec ce dernier le prix Nobel de la paix pour avoir conjointement et pacifiquement mis fin au régime d'apartheid et jeté les bases d'une nouvelle Afrique du Sud démocratiqueN 1.
+ 
+Après une transition difficile où de Klerk et lui évitent une guerre civile entre les partisans de l'apartheid, ceux de l'ANC et ceux de l'Inkhata à dominante zoulou, Nelson Mandela devient le premier président noir d'Afrique du Sud en 1994. Il mène une politique de réconciliation nationale entre Noirs et Blancs ; il lutte contre les inégalités économiques, mais néglige le combat contre le sida, en pleine expansion en Afrique du Sud. Après un unique mandat, il se retire de la vie politique active, mais continue à soutenir publiquement le Congrès national africain tout en condamnant ses dérives.
+ 
+Impliqué par la suite dans plusieurs associations de lutte contre la pauvreté ou le sida, élevé au rang de patrimoine commun de l'humanité4, il demeure une personnalité mondialement écoutée au sujet des droits de l'homme et est salué comme le père d'une Afrique du Sud multiraciale et pleinement démocratique, qualifiée de « nation arc-en-ciel », même si le pays reste confronté à de graves problèmes d'inégalités économiques, de tensions sociales et de replis communautaires.
+                    </TextBlock>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Photos">
+                <WrapPanel>
+                    <Image Source="images/mandela01.jpg" Width="150" Height="150"/>
+                    <Image Source="images/mandela02.jpg" Width="150" Height="150"/>
+                    <Image Source="images/mandela03.jpg" Width="150" Height="150"/>
+                    <Image Source="images/mandela04.jpg" Width="150" Height="150"/>
+                    <Image Source="images/mandela05.jpg" Width="150" Height="150"/>
+                </WrapPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

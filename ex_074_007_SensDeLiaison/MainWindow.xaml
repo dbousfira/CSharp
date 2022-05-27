@@ -1,0 +1,106 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<Window x:Class="ex_074_007_SensDeLiaison.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="190" Width="525"
+        xmlns:my="clr-namespace:ex_074_007_SensDeLiaison"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Grid Name="mGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <ObjectDataProvider x:Key="myNounours" ObjectType="{x:Type my:Nounours}">
+                <ObjectDataProvider.ConstructorParameters>
+                    <system:String>Babar</system:String>
+                    <system:DateTime>1931-1-1</system:DateTime>
+                    <system:Int32>34</system:Int32>
+                </ObjectDataProvider.ConstructorParameters>
+            </ObjectDataProvider>
+        </Grid.Resources>
+        <Grid.DataContext>
+            <Binding Source="{StaticResource myNounours}"/>
+        </Grid.DataContext>
+
+
+
+        <TextBlock Text="OneTime" Grid.Column="0"/>
+        <TextBlock Text="OneWay" Grid.Column="1"/>
+        <TextBlock Text="TwoWay" Grid.Column="2"/>
+        
+        <!-- Sens de Liaison OneTime : même si la Source change, même si elle implémente INotifyPropertyChanged,
+                                       la liaison n'est mise à jour que lors de l'initialisation du contrôle
+                                       (ou si la Source change complètement : appel d'un constructeur 
+                                            [cf. code-behind])-->
+        <TextBox Text="{Binding Path=Nom, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1" Grid.Column="0"/>
+        <TextBox Text="{Binding Path=DateDeNaissance, Mode=OneTime, UpdateSourceTrigger=LostFocus}" 
+                 Grid.Row="2" Grid.Column="0"/>
+        <TextBox Text="{Binding Path=NbPoils, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" 
+                 Grid.Row="3" Grid.Column="0"/>
+
+        <!-- Sens de Liaison OneWay : si la Source change et si elle implémente INotifyPropertyChanged,
+                                      la liaison met à jour la propriété de la cible
+                                MAIS si la cible change, la Source ne sera jamais modifiée -->
+        <TextBox Text="{Binding Path=Nom, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1" Grid.Column="1"/>
+        <TextBox Text="{Binding Path=DateDeNaissance, Mode=OneWay, UpdateSourceTrigger=LostFocus}" 
+                 Grid.Row="2" Grid.Column="1"/>
+        <TextBox Text="{Binding Path=NbPoils, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                 Grid.Row="3" Grid.Column="1"/>
+
+        <!-- Sens de Liaison TwoWay : si la Source change et si elle implémente INotifyPropertyChanged,
+                                      la liaison met à jour la propriété de la cible
+                                ET si la cible change, la Source sera modifiée -->
+        <TextBox Text="{Binding Path=Nom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1" Grid.Column="2"/>
+        <TextBox Text="{Binding Path=DateDeNaissance, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" 
+                 Grid.Row="2" Grid.Column="2"/>
+        <TextBox Text="{Binding Path=NbPoils, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 Grid.Row="3" Grid.Column="2"/>
+
+        <!-- Sens de Liaison OnWayToSource : 
+                                      même si la Source change, même si elle implémente INotifyPropertyChanged,
+                                       la liaison ne met JAMAIS à jour la cible
+                                MAIS si la cible change, la Source sera modifiée -->
+        <!-- notez ici l'utilisation de FallbackValue pour donner une valeur par défaut -->
+        <TextBlock Text="OneWayToSource" Grid.Column="3"/>
+        <TextBox Name="mOneWayToSourceNom"  
+                 Text="{Binding Path=Nom, Mode=OneWayToSource, UpdateSourceTrigger=Explicit, FallbackValue=Babar}"
+                 Grid.Row="1" Grid.Column="3"/>
+        <TextBox Name="mOneWayToSourceNaissance"
+                 Text="{Binding Path=DateDeNaissance, Mode=OneWayToSource, UpdateSourceTrigger=Explicit, FallbackValue=1/1/1931}" 
+                 Grid.Row="2" Grid.Column="3"/>
+        <TextBox Name="mOneWayToSourceNbPoils"
+                 Text="{Binding Path=NbPoils, Mode=OneWayToSource, UpdateSourceTrigger=Explicit, FallbackValue=34}" 
+                 Grid.Row="3" Grid.Column="3"/>
+        <Button Name="mButtonSendToSource" Content="Send" Grid.Row="4" Grid.Column="2" 
+                Grid.ColumnSpan="2" Click="mButtonSendToSource_Click"/>
+
+        <Button Name="mButtonChucky" Content="Chucky" Grid.Row="4" Grid.Column="0" 
+                 Click="mButtonOK_Click"/>
+
+        <Button Name="mButtonGizmo" Content="Gizmo" Grid.Row="4" Grid.Column="1"
+                Click="mButtonGizmo_Click"/>
+    </Grid>
+</Window>

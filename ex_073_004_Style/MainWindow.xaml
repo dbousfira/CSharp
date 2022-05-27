@@ -1,0 +1,81 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_073_004_Style.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="Auto">
+    <Window.Resources>
+        <Style x:Key="stylePourTous">
+            <Setter Property="Button.VerticalAlignment" Value="Center"/>
+            <Setter Property="Button.Margin" Value="5"/>
+            <Setter Property="Button.Padding" Value="5"/>
+        </Style>
+        <Style x:Key="stylePourBouton" TargetType="{x:Type Button}"
+               BasedOn="{StaticResource stylePourTous}">
+            <Setter Property="Background" Value="Yellow"/>
+            <Setter Property="RenderTransformOrigin" Value=".5,.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="20"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="stylePourBouton2" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Aharoni"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <!-- style implicite (pas de key, mais un targetType -->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Aharoni"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Horizontal">
+        <Button Style="{StaticResource stylePourBouton}" Content="a"/>
+        <ComboBox Style="{StaticResource stylePourTous}" SelectedIndex="1">
+            <ComboBoxItem>a</ComboBoxItem>
+            <ComboBoxItem>b</ComboBoxItem>
+            <ComboBoxItem>c</ComboBoxItem>
+            <ComboBoxItem>d</ComboBoxItem>
+        </ComboBox>
+        <TextBox Style="{StaticResource stylePourTous}" Text="c"/>
+        <Button Style="{StaticResource stylePourBouton2}" Content="d"/>
+        <ListBox Style="{StaticResource stylePourTous}">
+            <ListBox.Items>
+                <ListBoxItem>a</ListBoxItem>
+                <ListBoxItem>b</ListBoxItem>
+                <ListBoxItem>c</ListBoxItem>
+                <ListBoxItem>d</ListBoxItem>
+                <ListBoxItem>e</ListBoxItem>
+                <ListBoxItem>f</ListBoxItem>
+                <ListBoxItem>g</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
+        <Button Style="{StaticResource stylePourBouton}">
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Text="f"/>
+                    <Ellipse Width="10" Height="10" Fill="Aquamarine" Stroke="Red" Margin="3"/>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+        <Button>g</Button>
+        <Button>h</Button>
+        <Button>i</Button>
+    </StackPanel>
+</Window>

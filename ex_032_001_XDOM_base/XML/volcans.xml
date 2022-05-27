@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : volcans.xml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-26
+
+======================================================================== -->
+
+<volcans>
+  <volcan activité="actif" pays="France" type="rouge">
+    <dernière_éruption>2010-12-10</dernière_éruption>
+    <nom>Piton de la Fournaise</nom>
+    <altitude>2632</altitude>
+    <coordonnées>
+      <latitude>-21.2425</latitude>
+      <longitude>55.708889</longitude>
+    </coordonnées>
+    <roches>Basalte</roches>
+  </volcan>
+  <volcan activité="en éruption" pays="Italie" type="rouge">
+    <nom>Etna</nom>
+    <dernière_éruption>2010/11/14</dernière_éruption>
+    <altitude>3345</altitude>
+    <coordonnées>
+      <latitude>37.734</latitude>
+      <longitude>15.004</longitude>
+    </coordonnées>
+  </volcan>
+  <volcan activité="actif" pays="Italie" type="gris">
+    <dernière_éruption>04/04/1944</dernière_éruption>
+    <altitude>1281</altitude>
+    <coordonnées>
+      <latitude>40.821389</latitude>
+      <longitude>14.425556</longitude>
+    </coordonnées>
+    <nom>Vesuve</nom>
+    <roches>Téphrites trachytes phonolites</roches>
+  </volcan>
+  <volcan activité="en éruption" pays="Philippines" type="gris">
+    <dernière_éruption>30 janvier 2011</dernière_éruption>
+    <nom>Mayon</nom>
+    <altitude>2462</altitude>
+    <coordonnées>
+      <latitude>13.257</latitude>
+      <longitude>123.685</longitude>
+    </coordonnées>
+  </volcan>
+  <volcan activité="endormi" pays="France" type="gris">
+    <endormi_depuis>6000 ans</endormi_depuis>
+    <altitude>1465</altitude>
+    <coordonnées>
+      <latitude>45.7723</latitude>
+      <longitude>2.9658</longitude>
+    </coordonnées>
+    <nom>Puy de Dôme</nom>
+  </volcan>
+  <volcan activité="pas en éruption" pays="Russie" type="gris">
+    <dernière_éruption>2009-06-21</dernière_éruption>
+    <altitude>1512</altitude>
+    <coordonnées>
+      <latitude>48.09</latitude>
+      <longitude>153.2</longitude>
+    </coordonnées>
+    <nom>Sarytchev</nom>
+    <roches>Andésite</roches>
+  </volcan>
+  <volcan activité="actif" pays="Islande" type="rouge">
+    <dernière_éruption>2010-10-27</dernière_éruption>
+    <altitude>1666</altitude>
+    <coordonnées>
+      <latitude>63.63</latitude>
+      <longitude>-19.62</longitude>
+    </coordonnées>
+    <roches>Basalte</roches>
+  </volcan>
+  <volcan activité="actif" pays="Philippines" type="gris">
+    <nom>Pinatubo</nom>
+    <dernière_éruption>juillet 1993</dernière_éruption>
+    <altitude>1486</altitude>
+    <coordonnées>
+      <latitude>15.13</latitude>
+      <longitude>120.35</longitude>
+    </coordonnées>
+    <roches>Andésite Basalte</roches>
+  </volcan>
+</volcans>

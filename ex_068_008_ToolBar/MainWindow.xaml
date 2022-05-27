@@ -1,0 +1,75 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_068_008_ToolBar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="350">
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button>
+                    <Image Source="icones/commenter.png"/>
+                </Button>
+                <Button>
+                    <Image Source="icones/decommenter.png"/>
+                </Button>
+                <Separator/>
+                <ToggleButton>
+                    <Image Source="icones/gras.png"/>
+                </ToggleButton>
+                <ToggleButton>
+                    <Image Source="icones/italique.png"/>
+                </ToggleButton>
+                <ToggleButton>
+                    <Image Source="icones/souligne.png"/>
+                </ToggleButton>
+                <Separator/>
+                <TextBlock Text="Zoom"/>
+                <ComboBox SelectedIndex="3">
+                    <TextBlock Text="25%"/>
+                    <TextBlock Text="50%"/>
+                    <TextBlock Text="75%"/>
+                    <TextBlock Text="100%"/>
+                </ComboBox>
+            </ToolBar>
+
+            <ToolBar>
+                <Button>
+                    <Image Source="icones/commenter.png"/>
+                </Button>
+                <Button>
+                    <Image Source="icones/decommenter.png"/>
+                </Button>
+                <Separator/>
+                <ToggleButton>
+                    <Image Source="icones/gras.png"/>
+                </ToggleButton>
+                <ToggleButton>
+                    <Image Source="icones/italique.png"/>
+                </ToggleButton>
+                <ToggleButton>
+                    <Image Source="icones/souligne.png"/>
+                </ToggleButton>
+                <Separator/>
+                <TextBlock Text="Zoom"/>
+                <ComboBox SelectedIndex="3">
+                    <TextBlock Text="25%"/>
+                    <TextBlock Text="50%"/>
+                    <TextBlock Text="75%"/>
+                    <TextBlock Text="100%"/>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <TextBlock Text="Une ToolBar est faite d'un groupe de petits boutons, combobox, ... généralement en complément d'un menu. Une ToolBar est généralement placée à l'intérieur d'un ToolBarTray. Un ToolBarTray peut d'ailleurs contenir plusieurs ToolBar. Quand il n'y a pas assez de place pour mettre toutes les icones, celles-ci disparaissent mais sont accessibles via la petite flêche." 
+                   TextWrapping="Wrap" Margin="5"/>
+    </DockPanel>
+</Window>

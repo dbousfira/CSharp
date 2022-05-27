@@ -1,0 +1,41 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_069_009_MessageBoxes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:windows="clr-namespace:System.Windows;assembly=PresentationFramework"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Click="Button_Click_1" Content="MessageBox1" HorizontalAlignment="Center" Margin="5"/>
+        <Button Click="Button_Click_2" Content="MessageBox2" HorizontalAlignment="Center" Margin="5"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button Click="Button_Click_3" Content="MessageBox3" Margin="0,0,5,0"/>
+            <TextBlock Name="mTextBlockMessageBox3"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button Click="Button_Click_4" Content="MessageBox4" Margin="0,0,5,0"/>
+            <TextBlock Name="mTextBlockMessageBox4"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <ComboBox SelectedIndex="0" Margin="0, 0, 5, 0" Name="mComboBoxIcons">
+                <windows:MessageBoxImage>Information</windows:MessageBoxImage>
+                <windows:MessageBoxImage>None</windows:MessageBoxImage>
+                <windows:MessageBoxImage>Question</windows:MessageBoxImage>
+                <windows:MessageBoxImage>Stop</windows:MessageBoxImage>
+                <windows:MessageBoxImage>Warning</windows:MessageBoxImage>
+            </ComboBox>
+            <Button Click="Button_Click_5" Content="MessageBox5" Margin="0,0,5,0"/>
+            <TextBlock Name="mTextBlockMessageBox5"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

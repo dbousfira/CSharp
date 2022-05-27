@@ -1,0 +1,41 @@
+﻿<!-- ======================================================================
+
+   Copyright (C) 2013-2014 MARC CHEVALDONNE
+                           marc.chevaldonne.free.fr
+
+   Module        : MainWindow.xaml
+   Author        : Marc Chevaldonné
+   Creation date : 2014-05-17
+
+======================================================================== -->
+
+<Window x:Class="ex_069_007_ColorPicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Margin="5">
+            <Run>WPF ne contient pas quelques-unes des boîtes de dialogues les plus utiles comme celles pour choisir une couleur, une font ou un fichier... Voici un exemple utilisant un ColorPickerDialog réalisé par l'équipe de développement WPF de Microsoft, trouvé sur cette page : </Run>
+            <Hyperlink>http://blogs.msdn.com/b/wpfsdk/archive/2006/10/26/uncommon-dialogs--font-chooser-and-color-picker-dialogs.aspx</Hyperlink>
+            <LineBreak/>
+            <Run>Vous pouvez vous librement l'utiliser ou vous en inspirer pour faire le votre.</Run>
+            <LineBreak/>
+            <Run>De même, vous trouverez des exemples pour faire un FontChooser :</Run>
+            <Hyperlink>http://blogs.msdn.com/b/text/archive/2006/11/01/sample-font-chooser.aspx</Hyperlink>
+        </TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Name="mTextBlock" Text="Cliquez sur les rectangles ci-contre pour modifier la couleur du texte ou du fond en utilisant le ColorPickerDialog"
+                       TextWrapping="Wrap" Margin="5" Width="300" HorizontalAlignment="Left"/>
+            <Viewbox>
+                <Canvas Width="30" Height="30">
+                    <Rectangle Canvas.Left="7" Canvas.Top="7" Width="20" Height="20" Stroke="Black" StrokeThickness="2" 
+                                Fill="White" Name="mRectangleBackground"
+                                MouseLeftButtonDown="Rectangle_MouseLeftButtonDown_1"/>
+                    <Rectangle Width="20" Height="20" Stroke="Black" StrokeThickness="2"  Fill="White"
+                                Name="mRectangleForeground"
+                                MouseLeftButtonDown="Rectangle_MouseLeftButtonDown_1"/>
+                </Canvas>
+            </Viewbox>
+        </StackPanel>
+    </StackPanel>
+</Window>

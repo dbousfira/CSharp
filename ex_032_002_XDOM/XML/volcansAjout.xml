@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<volcans>
+  <volcan pays="France">
+    <nom>Piton de la Fournaise</nom>
+    <altitude>2632</altitude>
+    <coordonnées>
+      <latitude>-21.2425</latitude>
+      <longitude>55.70889</longitude>
+    </coordonnées>
+    <roches>Basalte</roches>
+  </volcan>
+  <volcan pays="Italie">
+    <nom>Etna</nom>
+    <altitude>3345</altitude>
+    <coordonnées>
+      <latitude>37.734</latitude>
+      <longitude>15.004</longitude>
+    </coordonnées>
+    <roches></roches>
+  </volcan>
+  <volcan pays="Italie">
+    <nom>Vesuve</nom>
+    <altitude>1281</altitude>
+    <coordonnées>
+      <latitude>40.82139</latitude>
+      <longitude>14.4255562</longitude>
+    </coordonnées>
+    <roches>Téphrites trachytes phonolites</roches>
+  </volcan>
+  <volcan pays="Philippines">
+    <nom>Mayon</nom>
+    <altitude>2462</altitude>
+    <coordonnées>
+      <latitude>13.257</latitude>
+      <longitude>123.685</longitude>
+    </coordonnées>
+    <roches></roches>
+  </volcan>
+  <volcan pays="France">
+    <nom>Puy de Dôme</nom>
+    <altitude>1465</altitude>
+    <coordonnées>
+      <latitude>45.7723</latitude>
+      <longitude>2.9658</longitude>
+    </coordonnées>
+    <roches></roches>
+  </volcan>
+  <volcan pays="Russie">
+    <nom>Sarytchev</nom>
+    <altitude>1512</altitude>
+    <coordonnées>
+      <latitude>48.09</latitude>
+      <longitude>153.2</longitude>
+    </coordonnées>
+    <roches>Andésite</roches>
+  </volcan>
+  <volcan pays="Islande">
+    <nom>Eyjafjöll</nom>
+    <altitude>1666</altitude>
+    <coordonnées>
+      <latitude>63.63</latitude>
+      <longitude>-19.62</longitude>
+    </coordonnées>
+    <roches>Basalte</roches>
+  </volcan>
+  <volcan pays="Philippines">
+    <nom>Pinatubo</nom>
+    <altitude>1486</altitude>
+    <coordonnées>
+      <latitude>15.13</latitude>
+      <longitude>120.35</longitude>
+    </coordonnées>
+    <roches>Andésite Basalte</roches>
+  </volcan>
+  <volcan pays="France">
+    <nom>Puy de Pariou</nom>
+    <altitude>1209</altitude>
+    <coordonnées>
+      <latitude>45.7954636</latitude>
+      <longitude>2.970257</longitude>
+    </coordonnées>
+    <roches>Trachy-basalte trachy-andésite trachyte</roches>
+  </volcan>
+</volcans>
